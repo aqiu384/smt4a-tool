@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SMT4A Tool Redirect</title>
+    <script type="text/javascript">
+      const l = window.location
+      const csrParam = 'csr'
+      const siteRoot = '/smt4a-tool'
+      const pathParams = encodeURIComponent(l.pathname.slice(siteRoot.length))
+      const replacePath = (
+        l.protocol + '//' + l.hostname + (l.prot ? ':' + l.port : '') +
+        siteRoot + (l.search ? l.search + '&' : '?') +
+        csrParam + '=' + pathParams + l.hash
+      )
+      l.replace(replacePath)
+    </script>
+  </head>
+  <body>
+    Please navigate manually to <code>/smt4a-tool</code>
+  </body>
+</html>
