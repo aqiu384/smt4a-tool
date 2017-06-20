@@ -1,0 +1,174 @@
+/* BEGIN compendium common */
+
+body {
+  background-color: black;
+  color: white;
+  width: 100%;
+}
+
+a {
+  color: white;
+}
+
+div.compendium {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1000px;
+}
+
+div.center {
+  text-align: center;
+}
+
+/* END compendium common */
+
+/* BEGIN borders special */
+
+tr.skill.unique {
+  background-color: maroon;
+}
+
+tr.persona.treasure {
+  background-color: darkgreen;
+}
+
+tr.bold {
+  font-weight: bold;
+}
+
+/* END borders special */
+
+/* BEGIN div tabs */
+
+div.tab-option {
+  display: table-cell;
+}
+
+div.tab-group {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+/* END div tabs */
+
+/* BEGIN tables sorted */
+
+table.sorted thead {
+  background-color: black;
+  display: block;
+  position: -webkit-sticky;
+  position: sticky;
+  width: 100%;
+  top: 0;
+}
+
+table.sorted tr.hidden {
+  visibility: collapse;
+  line-height: 0;
+}
+
+table.sorted tbody {
+  display: table;
+  width: 100%;
+}
+
+/* END tables sorted */
+
+/* BEGIN tables common */
+
+table {
+  width: 100%;
+}
+
+thead tr {
+  background-color: yellowgreen;
+  color: black;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #222;
+}
+
+table a.button {
+  display: block;
+  color: black;
+  text-decoration: none;
+}
+
+th.button:hover,
+table a.button:hover {
+  background-color: greenyellow;
+}
+
+table button.invisible {
+  display: none;
+}
+
+/* END tables common */
+
+/* BEGIN hide common */
+
+.hide {
+  display: none;
+  line-height: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* END hide common */
+
+/* BEGIN list commas */
+
+ul.commas {
+  padding: 0;
+  list-style: none;
+}
+
+ul.commas li {
+  display: inline;
+}
+
+ul.commas li:after {
+  content: ", ";
+}
+
+ul.commas li:last-child:after {
+  content: "";
+}
+
+/* END list commas */
+
+/* BEGIN td resistances */
+
+td.resists.wk { color: red; }
+td.resists.no { color: transparent; }
+td.resists.rs { color: lightseagreen; }
+td.resists.nu { color: lightgray; }
+td.resists.rp { color: cyan; }
+td.resists.ab { color: lime; }
+
+/* END td resistances */
+
+/* BEGIN td affinities */
+
+td.affinity-9 { color: red; }
+td.affinity-8 { color: red; }
+td.affinity-7 { color: orangered; }
+td.affinity-6 { color: tomato; }
+td.affinity-5 { color: coral; }
+td.affinity-4 { color: darkorange; }
+td.affinity-3 { color: orange; }
+td.affinity-2 { color: lightsalmon; }
+td.affinity-1 { color: gold; }
+td.affinity0 { color: transparent; }
+td.affinity1 { color: lawngreen; }
+td.affinity2 { color: lime; }
+td.affinity3 { color: springgreen; }
+td.affinity4 { color: mediumspringgreen; }
+td.affinity5 { color: limegreen; }
+td.affinity6 { color: mediumseagreen; }
+td.affinity7 { color: seagreen; }
+td.affinity8 { color: forestgreen; }
+
+/* END td affinities */
