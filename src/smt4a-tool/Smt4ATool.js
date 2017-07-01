@@ -51,7 +51,7 @@ class Smt4ATool extends React.PureComponent {
   }
 
   render() {
-    const { match } = this.props
+    const { match, location } = this.props
     const { hasDlc } = this.state
 
     const baseUrl = match.url === '/' ? '' : match.url
@@ -82,7 +82,19 @@ class Smt4ATool extends React.PureComponent {
         <Route exact path={match.url} render={ () => <Redirect to={demonsUrl}/> }/>
         <Route path="/index.html" render={ () => <Redirect to={`${baseUrl}/demons`}/> }/> 
         <Route path="/skills.html" render={ () => <Redirect to={`${baseUrl}/skills`}/> }/> 
-        <Route path="/demons.html" render={ () => <Redirect to={`${baseUrl}/demons`}/> }/> 
+        <Route path="/demons.html" render={ () => {
+          const nameParam = 'demon'
+          const nameBegin = location.search.indexOf(nameParam + '=')
+
+          let name = ''
+          if (nameBegin !== -1) {
+            const nameSuffix = location.search.substring(nameBegin + nameParam.length) + '&'
+            console.log(nameSuffix)
+            name = '/' + nameSuffix.substring(1, nameSuffix.indexOf('&'))
+          }
+
+          return <Redirect to={`${baseUrl}/demons${name}`}/>
+        } }/> 
         <Route path={`${baseUrl}/:tab`} render={ ({ match }) => (
           <div className="compendium">
             <div className={match.isExact ? 'show' : 'hide'}>
