@@ -19,7 +19,8 @@ function Demon({ match, hasDlc, demonsUrl, tabLinks }) {
   const name = match.params.name
 
   if (!DemonData.hasOwnProperty(name)) {
-    return <h2>Could not find {name} in compendium</h2>
+    const baseUrl = match.url.split('/' + name)[0]
+    return <Redirect to={baseUrl}/>
   }
 
   const data = DemonData[name]

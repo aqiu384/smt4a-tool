@@ -106,9 +106,7 @@ class Smt4ATool extends React.PureComponent {
         ) }/>
         <Route path={`${baseUrl}/:tab`} render={ ({ match }) => (
           <div className="compendium">
-            <div className={match.isExact ? 'show' : 'hide'}>
-              <SimpleTabs currTab={match.params.tab} tabs={tabs} baseUrl={baseUrl}/>
-            </div>
+            <SimpleTabs currTab={match.params.tab} tabs={tabs} baseUrl={baseUrl}/>
             <Footer/>
           </div>
         ) }/>

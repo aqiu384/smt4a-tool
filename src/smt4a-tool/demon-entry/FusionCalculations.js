@@ -1,7 +1,7 @@
 import DemonData from '../data/DemonData'
 import FusionChart from '../data/FusionChart'
 import SpecialRecipes from '../data/SpecialRecipes'
-import ElementMods from '../data/ElementModifiers'
+import ElementModifiers from '../data/ElementModifiers'
 import RaceOrder from '../data/RaceOrder'
 
 const NormalFusionExceptions = Object.keys(SpecialRecipes).reduce( (acc, nameR) => {
@@ -48,6 +48,10 @@ const NormalResults = RaceOrder.reduce(
       acc[DemonData[name].race].push(DemonData[name].lvl)
     } return acc
   }, RaceOrder.reduce( (acc, race) => { acc[race] = []; return acc }, {} ) )
+)
+
+const ElementMods = Object.assign(
+  RaceOrder.reduce( (acc, race) => { acc[race] = {}; return acc }, {} ), ElementModifiers
 )
 
 function generateIngredients(excludedNames) {
