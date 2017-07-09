@@ -95,19 +95,20 @@ class Smt4ATool extends React.PureComponent {
 
           return <Redirect to={`${baseUrl}/demons${name}`}/>
         } }/> 
+        <Route path={`${baseUrl}/demons/:name`} render={ ({ match }) => (
+          <div className="compendium">
+            <DemonEntry {...{
+              tabLinks, match, hasDlc,
+              demonsUrl: demonsUrl
+            }}/> 
+            <Footer/>
+          </div>
+        ) }/>
         <Route path={`${baseUrl}/:tab`} render={ ({ match }) => (
           <div className="compendium">
             <div className={match.isExact ? 'show' : 'hide'}>
               <SimpleTabs currTab={match.params.tab} tabs={tabs} baseUrl={baseUrl}/>
             </div>
-            { match.params.tab === 'demons' &&
-              <Route path={`${match.url}/:name`} render={ ({ match }) => 
-                <DemonEntry {...{
-                  tabLinks, match, hasDlc,
-                  demonsUrl: demonsUrl
-                }}/> 
-              }/>
-            }
             <Footer/>
           </div>
         ) }/>
