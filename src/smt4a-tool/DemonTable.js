@@ -43,8 +43,11 @@ class DemonTable extends React.PureComponent {
         acc[element + 'A'] = affinities[element] ? affinities[element] : 0; return acc
       }, row)
 
-      if (SpecialRecipes.hasOwnProperty(name) && SpecialRecipes[name].length === 0) {
-        row.rowClass = 'persona treasure'
+      if (SpecialRecipes.hasOwnProperty(name)) {
+        row.rowClass = 'fusion ' + (SpecialRecipes[name].length === 0 ?
+          'accident' :
+          'special'
+        )
       }
 
       return row

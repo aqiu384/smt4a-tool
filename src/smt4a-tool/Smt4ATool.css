@@ -28,8 +28,12 @@ tr.skill.unique {
   background-color: maroon;
 }
 
-tr.persona.treasure {
-  background-color: darkgreen;
+tr.fusion.accident {
+  background-color: #500000;
+}
+
+tr.fusion.special {
+  background-color: #005000;
 }
 
 tr.bold {
