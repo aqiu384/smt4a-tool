@@ -2,14 +2,16 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>SMT4A Tool Redirect</title>
+    <title>Megami Tensei Fusion Tools Redirect</title>
     <script type="text/javascript">
       const l = window.location
       const csrParam = 'csr'
       const siteRoot = '/smt4a-tool'
-      const pathParams = encodeURIComponent(l.pathname.slice(siteRoot.length))
+	  const redirectMaindir = '/megaten-fusion-tool'
+	  const redirectSubdir = '/smt4f'
+      const pathParams = encodeURIComponent(redirectSubdir + l.pathname.slice(siteRoot.length))
       const replacePath = (
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + siteRoot +
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + redirectMaindir +
         '?' + (l.search + '&' + csrParam + '=' + pathParams).slice(1) +
         l.hash
       )
@@ -17,6 +19,6 @@
     </script>
   </head>
   <body>
-    Please navigate manually to <code>/smt4a-tool</code>
+    Please navigate manually to <a href="/megaten-fusion-tool/smt4f">Shin Megami Tensei IV: Apocalypse Fusion Tool</a>
   </body>
 </html>
